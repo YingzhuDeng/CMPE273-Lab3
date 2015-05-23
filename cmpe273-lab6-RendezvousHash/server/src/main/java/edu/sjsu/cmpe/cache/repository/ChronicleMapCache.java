@@ -19,7 +19,7 @@ public class ChronicleMapCache implements CacheInterface{
 
       public ChronicleMapCache(String serverUrl){
         try {
-        	String serverName = extractServerName(serverUrl);
+        	String serverName = getServerName(serverUrl);
         	String fileName = getFileName(serverName);
         	File file = new File(fileName);
                 CMBuilder = ChronicleMapBuilder.of(Long.class, Entry.class);
@@ -31,10 +31,8 @@ public class ChronicleMapCache implements CacheInterface{
  
 
 
-    private String extractServerName (String serverName){
-    	  //System.out.println("Server Name: " + serverName);
+    private String getServerName (String serverName){
       	  String[] split = serverName.split("/");
-    	  //System.out.println("split size: " + split.length);
     	  String serverSplit = split[1];
     	  String[] split2 = serverSplit.split("_");
     	  String realServerName = split2[0] + "_" + split2[1];
