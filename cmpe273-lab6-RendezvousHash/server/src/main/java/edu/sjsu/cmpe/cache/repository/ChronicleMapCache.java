@@ -14,7 +14,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public class ChronicleMapCache implements CacheInterface{
 
-      ChronicleMapBuilder<Long, Entryi CMBuilder;
+      ChronicleMapBuilder<Long, Entry> CMBuilder;
       ChronicleMap<Long, Entry> map;
 
       public ChronicleMapCache(String serverUrl){
